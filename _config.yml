@@ -1,13 +1,14 @@
+avatar: https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png # Avatar
 favicon:
   href: /favicon.ico # Favicon of your site.
   type: image/x-icon # Icon type, possible values are(image/png, image/vnd.microsoft.icon, image/x-icon, image/gif)
-
 search: https://cn.bing.com/search?q= # https://www.google.com/search?q==
 head: '<!--<script src="" async></script>-->' # Add anything to <head></head>
+defaultCover: https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/compress/5c3aec85a4343.jpg # Default cover of your site.
 
 menu:
-  Categories: categories
-  About: about.html
+  Home: / # Home page
+  About: https://github.com/nexmoe
 
 analytics: # 统计系统，目前支持 Google analytics.js 统计、Google Tag Manager 统计、CNZZ 统计、腾讯统计、51.La统计、百度统计
   google_site_id: #<ID>

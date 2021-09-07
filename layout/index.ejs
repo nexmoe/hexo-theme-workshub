@@ -1,60 +1,37 @@
 <div class="container">
 	<ol class="worksheet">
+		<% page.posts.each(function (page) { %>
 		<li class="item">
 			<div class="item-content">
-				<a href="/theme-nexmoe/hexo-theme-nexmoe">
-					<span class="owner text-normal" title="theme-nexmoe"
-						>theme-nexmoe</span
-					>/<span class="repo" title="hexo-theme-nexmoe"
-						>hexo-theme-nexmoe</span
-					>
+				<a href="<%- url_for(page.path) %>" class="title">
+					<% page.categories.map(function(category){  %>
+					<%- category.name %>/<% }) %><b><%- page.title %> </b>
 				</a>
-				<p class="pinned-item-desc">
-					沙拉单词很好用，但是查词面板作为一个经常使用的交互界面，还是需要点颜值的
-				</p>
+				<a href="<%- url_for(page.path) %>" class="cover">
+					<% if (page.cover){ %>
+						<img src="<%- page.cover %> "/>
+					<% } else { %>
+						<img src="<%- theme.defaultCover %> "/>
+					<% } %> 
+				</a>
+				<div class="desc">
+					<article>
+						<% if(page.excerpt) {%>
+							<%- page.excerpt %>
+						<%}  else{ %>
+							<%- truncate(page.content, {length: 150, separator: ' '}) %>
+						<% } %>
+					</article>
+				</div>
+				<div class="meta">
+					<%- list_tags(page.tags, {
+						show_count: false,
+						style: 'none',
+						separator: ' '
+					}) %>
+				</div>
 			</div>
 		</li>
-		<li class="item">
-			<div class="item-content">
-				<a href="/theme-nexmoe/hexo-theme-nexmoe">
-					<span class="owner text-normal" title="theme-nexmoe"
-						>theme-nexmoe</span
-					>/<span class="repo" title="hexo-theme-nexmoe"
-						>hexo-theme-nexmoe</span
-					>
-				</a>
-				<p class="pinned-item-desc">
-					沙拉单词很好用，但是查词面板作为
-				</p>
-			</div>
-		</li>
-		<li class="item">
-			<div class="item-content">
-				<a href="/theme-nexmoe/hexo-theme-nexmoe">
-					<span class="owner text-normal" title="theme-nexmoe"
-						>theme-nexmoe</span
-					>/<span class="repo" title="hexo-theme-nexmoe"
-						>hexo-theme-nexmoe</span
-					>
-				</a>
-				<p class="pinned-item-desc">
-					沙拉单词很好用，但是查词面板作为一个经常使用的交互界面，还是需要点颜值的
-				</p>
-			</div>
-		</li>
-		<li class="item">
-			<div class="item-content">
-				<a href="/theme-nexmoe/hexo-theme-nexmoe">
-					<span class="owner text-normal" title="theme-nexmoe"
-						>theme-nexmoe</span
-					>/<span class="repo" title="hexo-theme-nexmoe"
-						>hexo-theme-nexmoe</span
-					>
-				</a>
-				<p class="pinned-item-desc">
-					沙拉单词很好用，但是查词面板作为一个经常使用的交互界面，还是需要点颜值的
-				</p>
-			</div>
-		</li>
+		<% }) %> 
 	</ol>
 </div>
