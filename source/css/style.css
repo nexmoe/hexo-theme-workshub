@@ -36,6 +36,7 @@ a {
 
 .profile .content {
 	margin-left: 40px;
+	max-width: 200px;
 }
 
 .profile .content > * {
@@ -69,6 +70,20 @@ a {
 	color: #0d0c22;
 }
 
+.nav a span {
+	display: inline-block;
+    min-width: 20px;
+    padding: 0 6px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #24292f;
+	font-weight: 500;
+	margin-left: 5px;
+    text-align: center;
+    background-color: #eff1f3;
+	border: 1px solid transparent;
+    border-radius: 2em;
+}
 
 .worksheet {
 	display: flex;

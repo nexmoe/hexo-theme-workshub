@@ -1,14 +1,14 @@
 <div class="container">
 	<div class="profile">
-		<div class="avatar">
+		<a class="avatar" href="<%- url_for() %>">
 			<img
-				alt="折影轻梦"
-				src="https://cdn.dribbble.com/users/2137946/avatars/normal/41e90746bc2e64249d53f21bd0779354.jpg?1540656106"
+				alt="<%= theme.title %>"
+				src="<%= theme.avatar %>"
 			/>
-		</div>
+        </a>
 		<div class="content">
-			<h1 class="name">折影轻梦</h1>
-			<p class="des">Hubei, CN</p>
+			<h1 class="name"><%= config.title %></h1>
+			<p class="des"><%= config.description %></p>
 		</div>
 	</div>
 </div>

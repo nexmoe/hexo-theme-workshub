@@ -5,5 +5,10 @@
 			<a href="<%- url_for(theme.menu[name]) %>"><%= name %></a>
 		</li>
 		<% } %>
+		<% site.categories.sort('name').map(function(category){  %>
+			<li class="nav-item <%= is_current(category.path) %>">
+				<a href="<%- url_for(category.path) %>"><%= category.name %><span><%= category.length %></span></a>
+			</li>
+        <% }) %>
 	</ul>
 </div>

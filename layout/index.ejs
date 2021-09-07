@@ -3,11 +3,11 @@
 		<% page.posts.each(function (page) { %>
 		<li class="item">
 			<div class="item-content">
-				<a href="<%- url_for(page.path) %>" class="title">
+				<a href="<%- if(page.target_blank){page.target_blank}else{url_for(page.path)} %>" class="title">
 					<% page.categories.map(function(category){  %>
 					<%- category.name %>/<% }) %><b><%- page.title %> </b>
 				</a>
-				<a href="<%- url_for(page.path) %>" class="cover">
+				<a href="<%- if(page.target_blank){page.target_blank}else{url_for(page.path)} %>" class="cover">
 					<% if (page.cover){ %>
 						<img src="<%- page.cover %> "/>
 					<% } else { %>
