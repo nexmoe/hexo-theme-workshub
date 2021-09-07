@@ -1,0 +1,9 @@
+<div class="container">
+	<ul class="nav">
+		<% for (name in theme.menu) { %>
+		<li class="nav-item <%= is_current(theme.menu[name]) %>">
+			<a href="<%- url_for(theme.menu[name]) %>"><%= name %></a>
+		</li>
+		<% } %>
+	</ul>
+</div>
