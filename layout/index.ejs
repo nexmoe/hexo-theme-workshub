@@ -3,17 +3,31 @@
 		<% page.posts.each(function (page) { %>
 		<li class="item">
 			<div class="item-content">
-				<a href="<%- if(page.target_blank){page.target_blank}else{url_for(page.path)} %>" class="title">
-					<% page.categories.map(function(category){  %>
-					<%- category.name %>/<% }) %><b><%- page.title %> </b>
-				</a>
-				<a href="<%- if(page.target_blank){page.target_blank}else{url_for(page.path)} %>" class="cover">
-					<% if (page.cover){ %>
-						<img src="<%- page.cover %> "/>
-					<% } else { %>
-						<img src="<%- theme.defaultCover %> "/>
-					<% } %> 
-				</a>
+				<% if(page.target_blank){ %> 
+					<a href="<%- page.target_blank %>" target="_blank" class="title">
+						<% page.categories.map(function(category){  %>
+						<%- category.name %>/<% }) %><b><%- page.title %> </b>
+					</a>
+					<a href="<%- page.target_blank %>" target="_blank" class="cover">
+						<% if (page.cover){ %>
+							<img src="<%- page.cover %> "/>
+						<% } else { %>
+							<img src="<%- theme.defaultCover %> "/>
+						<% } %> 
+					</a>
+				<% } else { %>
+					<a href="<%- url_for(page.path) %>" class="title">
+						<% page.categories.map(function(category){  %>
+						<%- category.name %>/<% }) %><b><%- page.title %> </b>
+					</a>
+					<a href="<%- url_for(page.path) %>" class="cover">
+						<% if (page.cover){ %>
+							<img src="<%- page.cover %> "/>
+						<% } else { %>
+							<img src="<%- theme.defaultCover %> "/>
+						<% } %> 
+					</a>
+				<% } %> 
 				<div class="desc">
 					<article>
 						<% if(page.excerpt) {%>
