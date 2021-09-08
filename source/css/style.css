@@ -99,6 +99,18 @@ a {
     box-sizing: border-box;
 }
 
+@media screen and (max-width: 600px) {
+    .worksheet .item {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .worksheet .item {
+        width: 50%;
+    }
+}
+
 .item-content {
 	display: flex;
 	width: 100%;
