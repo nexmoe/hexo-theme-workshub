@@ -99,7 +99,7 @@ a {
     box-sizing: border-box;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .worksheet .item {
         width: 100%;
     }
